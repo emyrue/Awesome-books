@@ -1,5 +1,5 @@
 const booksSection = document.querySelector('.books');
-let newBooks = [];
+const newBooks = [];
 let books = [
   {
     title: 'First Book',
@@ -16,18 +16,11 @@ let books = [
 ];
 
 if (window.localStorage.getItem('bookArray') !== null) {
-  let array = JSON.parse(window.localStorage.getItem('bookArray'));
+  const array = JSON.parse(window.localStorage.getItem('bookArray'));
   for (let m = 0; m < array.length; m += 1) {
-  newBooks[m] = JSON.parse(window.localStorage.getItem(m.toString()));
-}
-  books = newBooks;
-}
-
-function newObject(bookTitle, bookAuthor) {
-  books[books.length] = {
-    title: bookTitle,
-    author: bookAuthor,
+    newBooks[m] = JSON.parse(window.localStorage.getItem(m.toString()));
   }
+  books = newBooks;
 }
 
 function deleteObject(n) {
@@ -36,7 +29,7 @@ function deleteObject(n) {
   for (let k = 0; k < books.length; k += 1) {
     window.localStorage.setItem(k.toString(), JSON.stringify(books[k]));
   }
-  location.reload();
+  window.location.reload();
 }
 
 function displayObject(n) {
@@ -49,26 +42,25 @@ function displayObject(n) {
 }
 
 for (let i = 0; i < books.length; i += 1) {
-  let newElement = document.createElement('section');
+  const newElement = document.createElement('section');
   newElement.innerHTML = displayObject(i);
   booksSection.appendChild(newElement);
 }
 
 for (let j = 0; j < books.length; j += 1) {
-  let removeButton = document.querySelectorAll('.remove');
-  removeButton[j].addEventListener('click', function() {deleteObject(j);});
+  const removeButton = document.querySelectorAll('.remove');
+  removeButton[j].addEventListener('click', () => { deleteObject(j); });
 }
 
-const form = document.getElementById('form');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
 const add = document.getElementById('add');
-let newBook = {
+const newBook = {
   title: '',
   author: '',
-}
+};
 
-add.addEventListener('click', function() {
+add.addEventListener('click', () => {
   newBook.title = newTitle.value;
   newBook.author = newAuthor.value;
 
@@ -78,7 +70,7 @@ add.addEventListener('click', function() {
   for (let k = 0; k < books.length; k += 1) {
     window.localStorage.setItem(k.toString(), JSON.stringify(books[k]));
   }
-})
+});
 
 window.localStorage.clear();
 
