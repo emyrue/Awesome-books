@@ -59,6 +59,27 @@ for (let j = 0; j < books.length; j += 1) {
   removeButton[j].addEventListener('click', function() {deleteObject(j);});
 }
 
+const form = document.getElementById('form');
+const newTitle = document.getElementById('new-title');
+const newAuthor = document.getElementById('new-author');
+const add = document.getElementById('add');
+let newBook = {
+  title: '',
+  author: '',
+}
+
+add.addEventListener('click', function() {
+  newBook.title = newTitle.value;
+  newBook.author = newAuthor.value;
+
+  books[books.length] = newBook;
+
+  window.localStorage.setItem('bookArray', JSON.stringify(books));
+  for (let k = 0; k < books.length; k += 1) {
+    window.localStorage.setItem(k.toString(), JSON.stringify(books[k]));
+  }
+})
+
 window.localStorage.clear();
 
 window.localStorage.setItem('bookArray', JSON.stringify(books));
