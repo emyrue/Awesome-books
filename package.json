@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "stylint": "npx stylelint \"**/*.{css,scss}\" --fix",
+    "eslintrc": "npx eslint . --fix",
+    "hintrc": "npx hint ."
+    },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
