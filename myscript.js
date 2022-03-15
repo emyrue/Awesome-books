@@ -1,11 +1,9 @@
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
+function Book(title, author) {
+  this.title = title;
+  this.author = author;
 }
-  
-class Array {
+
+class Books {
   constructor() {
     this.books = [];
   }
@@ -50,15 +48,15 @@ class Array {
     `;
   }
 }
-  
+
 const booksSection = document.querySelector('.books');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
 const add = document.getElementById('add');
-let book1 = new Book('First Book', 'First Author');
-let book2 = new Book('Second Book', 'Second Author');
-let book3 = new Book('Third Book', 'Third Author');
-let bookList = new Array();
+const book1 = new Book('First Book', 'First Author');
+const book2 = new Book('Second Book', 'Second Author');
+const book3 = new Book('Third Book', 'Third Author');
+const bookList = new Books();
 bookList.add(book1);
 bookList.add(book2);
 bookList.add(book3);
@@ -72,7 +70,7 @@ for (let k = 0; k < bookList.books.length; k += 1) {
 
 for (let i = 0; i < bookList.books.length; i += 1) {
   const removeButton = document.querySelectorAll('.remove');
-  removeButton[i].addEventListener('click', () => { 
+  removeButton[i].addEventListener('click', () => {
     bookList.delete(i);
   });
 }
@@ -80,4 +78,4 @@ for (let i = 0; i < bookList.books.length; i += 1) {
 add.addEventListener('click', () => {
   bookList.add(new Book(newTitle.value, newAuthor.value));
   bookList.store();
-});  
+});
