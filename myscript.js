@@ -1,80 +1,83 @@
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+  
+class Array {
+  constructor() {
+    this.books = [];
+  }
+
+  add(book) {
+    this.books[this.books.length] = book;
+  }
+
+  delete(index) {
+    this.books.splice(index, 1);
+    window.localStorage.setItem('bookArray', JSON.stringify(this.books));
+    for (let i = 0; i < this.books.length; i += 1) {
+      window.localStorage.setItem(i.toString(), JSON.stringify(this.books[i]));
+    }
+    window.location.reload();
+  }
+
+  checkStorage() {
+    if (window.localStorage.getItem('bookArray') !== null) {
+      const newBooks = [];
+      const array = JSON.parse(window.localStorage.getItem('bookArray'));
+      for (let j = 0; j < array.length; j += 1) {
+        newBooks[j] = JSON.parse(window.localStorage.getItem(j.toString()));
+      }
+      this.books = newBooks;
+    }
+  }
+
+  store() {
+    window.localStorage.setItem('bookArray', JSON.stringify(this.books));
+    for (let i = 0; i < this.books.length; i += 1) {
+      window.localStorage.setItem(i.toString(), JSON.stringify(this.books[i]));
+    }
+  }
+
+  display(index) {
+    return `  
+      <div class="title">${this.books[index].title}</div>
+      <div class="author">${this.books[index].author}</div>
+      <button type="button" class="remove">Remove</button>
+      <hr>
+    `;
+  }
+}
+  
 const booksSection = document.querySelector('.books');
-const newBooks = [];
-let books = [
-  {
-    title: 'First Book',
-    author: 'First Author',
-  },
-  {
-    title: 'Second Book',
-    author: 'Second Author',
-  },
-  {
-    title: 'Third Book',
-    author: 'Third Author',
-  },
-];
-
-if (window.localStorage.getItem('bookArray') !== null) {
-  const array = JSON.parse(window.localStorage.getItem('bookArray'));
-  for (let m = 0; m < array.length; m += 1) {
-    newBooks[m] = JSON.parse(window.localStorage.getItem(m.toString()));
-  }
-  books = newBooks;
-}
-
-function deleteObject(n) {
-  books.splice(n, 1);
-  window.localStorage.setItem('bookArray', JSON.stringify(books));
-  for (let k = 0; k < books.length; k += 1) {
-    window.localStorage.setItem(k.toString(), JSON.stringify(books[k]));
-  }
-  window.location.reload();
-}
-
-function displayObject(n) {
-  return `  
-    <div class="title">${books[n].title}</div>
-    <div class="author">${books[n].author}</div>
-    <button type="button" class="remove">Remove</button>
-    <hr>
-  `;
-}
-
-for (let i = 0; i < books.length; i += 1) {
-  const newElement = document.createElement('section');
-  newElement.innerHTML = displayObject(i);
-  booksSection.appendChild(newElement);
-}
-
-for (let j = 0; j < books.length; j += 1) {
-  const removeButton = document.querySelectorAll('.remove');
-  removeButton[j].addEventListener('click', () => { deleteObject(j); });
-}
-
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
 const add = document.getElementById('add');
-const newBook = {
-  title: '',
-  author: '',
-};
+let book1 = new Book('First Book', 'First Author');
+let book2 = new Book('Second Book', 'Second Author');
+let book3 = new Book('Third Book', 'Third Author');
+let bookList = new Array();
+bookList.add(book1);
+bookList.add(book2);
+bookList.add(book3);
+bookList.checkStorage();
+
+for (let k = 0; k < bookList.books.length; k += 1) {
+  const newElement = document.createElement('section');
+  newElement.innerHTML = bookList.display(k);
+  booksSection.appendChild(newElement);
+}
+
+for (let i = 0; i < bookList.books.length; i += 1) {
+  const removeButton = document.querySelectorAll('.remove');
+  removeButton[i].addEventListener('click', () => { 
+    bookList.delete(i);
+  });
+}
 
 add.addEventListener('click', () => {
-  newBook.title = newTitle.value;
-  newBook.author = newAuthor.value;
-
-  books[books.length] = newBook;
-
-  window.localStorage.setItem('bookArray', JSON.stringify(books));
-  for (let k = 0; k < books.length; k += 1) {
-    window.localStorage.setItem(k.toString(), JSON.stringify(books[k]));
-  }
-});
-
-window.localStorage.clear();
-
-window.localStorage.setItem('bookArray', JSON.stringify(books));
-for (let k = 0; k < books.length; k += 1) {
-  window.localStorage.setItem(k.toString(), JSON.stringify(books[k]));
-}
+  bookList.add(new Book(newTitle.value, newAuthor.value));
+  bookList.store();
+});  
