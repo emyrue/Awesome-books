@@ -4,18 +4,25 @@
         <title>Awesome Books</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <h1>Awesome Books</h1>
-        <section class="books">
-
-        </section>
-        <form id="form">
-            <input type="text" id="new-title" placeholder="Title">
-            <input type="text" id="new-author" placeholder="Author">
-            <button type="submit" id="add">Add</button>
-        </form>
-        <script src="./myscript.js"></script>
+        <div class="container">
+            <h1>Awesome Books</h1>
+            <section class="books">
+                <form class="form">
+                    <div class="book-title">
+                        <label for="title"></label>
+                        <input type="text" id="new-title" name="title" placeholder="Title" minlength="1" maxlength="50">
+                    </div><br>
+                    <div class="author-name">
+                        <label for="new-title"></label>
+                        <input type="text" id="new-author" name="author" placeholder="Author" minlength="1" maxlength="50">
+                    </div><br>
+                    <button type="submit" id="add">Add</button>
+                </form>
+            </section>
+            </div>
+        <script src="scripts/index.js"></script>
     </body>
 </html>
