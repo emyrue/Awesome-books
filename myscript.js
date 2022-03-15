@@ -23,10 +23,12 @@ class Books {
 
   checkStorage() {
     if (window.localStorage.getItem('bookArray') !== null) {
+      const newBooks = [];
       const array = JSON.parse(window.localStorage.getItem('bookArray'));
       for (let j = 0; j < array.length; j += 1) {
-        this.books.push(JSON.parse(window.localStorage.getItem(j.toString())));
+        newBooks[j] = JSON.parse(window.localStorage.getItem(j.toString()));
       }
+      this.books = newBooks;
     }
   }
 
