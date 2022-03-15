@@ -30,9 +30,11 @@ To get a local copy up and running follow these simple steps:
 
 - GitHub: []()
 
-👤 **Author3**
+👤 **Teshome Kurabachew**
 
-- GitHub: []()
+- GitHub: [@githubhandle](https://github.com/TesheMaximillan)
+- Twitter: [@twitterhandle](https://twitter.com/TesheKura)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/teshome-kurabachew-aa8067180/)
 
 ## 🤝 Contributing
 
