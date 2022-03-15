@@ -7,16 +7,14 @@ export default class UI {
   static addBookToUI(book) {
     const list = document.querySelector('#bookList');
     const item = document.createElement('li');
-    const pTitle = document.createElement('p');
-    pTitle.textContent = book.title;
-    const pAuthor = document.createElement('p');
-    pAuthor.textContent = book.author;
+    item.className = 'listItem';
+    const pBook = document.createElement('p');
+    pBook.textContent = `"${book.title}" by ${book.author}`;
     const rmvBtn = document.createElement('button');
     rmvBtn.textContent = 'Remove';
     rmvBtn.className = 'rmv';
 
-    item.appendChild(pTitle);
-    item.appendChild(pAuthor);
+    item.appendChild(pBook);
     item.appendChild(rmvBtn);
 
     list.appendChild(item);
