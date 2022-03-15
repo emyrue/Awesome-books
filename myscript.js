@@ -9,7 +9,7 @@ class Books {
   }
 
   add(book) {
-    this.books[this.books.length] = book;
+    this.books.push(book);
   }
 
   delete(index) {
@@ -23,12 +23,10 @@ class Books {
 
   checkStorage() {
     if (window.localStorage.getItem('bookArray') !== null) {
-      const newBooks = [];
       const array = JSON.parse(window.localStorage.getItem('bookArray'));
       for (let j = 0; j < array.length; j += 1) {
-        newBooks[j] = JSON.parse(window.localStorage.getItem(j.toString()));
+        this.books.push(JSON.parse(window.localStorage.getItem(j.toString())));
       }
-      this.books = newBooks;
     }
   }
 
