@@ -50,7 +50,6 @@ class Books {
 }
 
 const booksSection = document.querySelector('.books');
-const removeButton = document.querySelectorAll('.remove');
 const newTitle = document.getElementById('new-title');
 const newAuthor = document.getElementById('new-author');
 const add = document.getElementById('add');
@@ -70,6 +69,7 @@ for (let k = 0; k < bookList.books.length; k += 1) {
 }
 
 for (let i = 0; i < bookList.books.length; i += 1) {
+  const removeButton = document.querySelectorAll('.remove');
   removeButton[i].addEventListener('click', () => {
     bookList.delete(i);
   });
