@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Awesome Books</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <h1>Awesome Books</h1>
-        <section class="books">
-
-        </section>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Books</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./index.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="primaryContent">
+      <h1>Awesome Books</h1>
+      <section class="books">
+        <ul id="bookList"></ul>
+      </section>
+      <div class="forForm">
         <form id="form">
-            <input type="text" id="new-title" placeholder="Title">
-            <input type="text" id="new-author" placeholder="Author">
-            <button type="submit" id="add">Add</button>
+          <input type="text" id="new-title" placeholder="Title" />
+          <input type="text" id="new-author" placeholder="Author" />
+          <button type="submit" id="add">Add</button>
         </form>
-        <script src="./myscript.js"></script>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
