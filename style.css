@@ -1,4 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#bookList {
+  width: 100%;
+  border: 2px solid black;
+}
+
+.books {
+  width: 100%;
+}
+
+.primaryContent {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+ul#bookList li:nth-child(odd) {
+  background-color: rgb(201, 199, 199);
+}
+
+.rmv {
+  border: 1px solid black;
+  padding: 7px;
+  background-color: white;
+}
+
+.forForm {
+  width: 70%;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  margin: 10px;
+  border: 2px solid black;
+}
+
+input::placeholder {
+  color: black;
+}
+
+#add {
+  border: 2px solid black;
+  box-shadow: 5px 5px rgb(201, 199, 199);
+  align-self: flex-end;
 }

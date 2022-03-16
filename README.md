@@ -26,13 +26,17 @@ To get a local copy up and running follow these simple steps:
 - Twitter: [@EmyrueRobertson](https://twitter.com/EmyrueRobertson)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emily-robertson-70a2bb22a/)
 
-👤 **Author2**
+👤 **Elmer Lopez**
 
-- GitHub: []()
+- GitHub: [@memelopez](https://github.com/memelopez/)
+- Twitter: [@memelopez10](https://twitter.com/memelopez10)
+- LinkedIn: [Elmer Lopez](https://www.linkedin.com/in/elmer-lopez-51b187200/)
 
-👤 **Author3**
+👤 **Teshome Kurabachew**
 
-- GitHub: []()
+- GitHub: [@githubhandle](https://github.com/TesheMaximillan)
+- Twitter: [@twitterhandle](https://twitter.com/TesheKura)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/teshome-kurabachew-aa8067180/)
 
 ## 🤝 Contributing
 
