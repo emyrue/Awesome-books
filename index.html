@@ -9,19 +9,46 @@
     <script src="./index.js" type="module" defer></script>
   </head>
   <body>
+    <header>
+        <h1 class="menu-title">Awesome Books</h1>
+        <ul class="menu-options">
+            <li class="menu-item menu-item1">List</li>
+            <li class="menu-item divider">|</li>
+            <li class="menu-item menu-item2">Add new</li>
+            <li class="menu-item divider">|</li>
+            <li class="menu-item menu-item3">Contact</li>
+        </ul>
+    </header>
+    <div class="date"></div>
     <div class="primaryContent">
-      <h1>Awesome Books</h1>
+      <h2>All Awesome Books</h2>
       <section class="books">
         <ul id="bookList"></ul>
       </section>
-      <div class="forForm">
+    </div>
+    <div class="forForm none">
         <form id="form">
           <h2>Add a new book</h2>
           <input type="text" id="new-title" placeholder="Title" />
           <input type="text" id="new-author" placeholder="Author" />
           <button type="submit" id="add">Add</button>
         </form>
-      </div>
     </div>
+    <div class="contact none">
+        <h2>Contact information</h2>
+        <p class="contact-paragraph">Do you have any questions or do you just want to say "hello"?<br>You can reach out to us!</p>
+        <ul class="contact-list">
+            <li class="contact-info">Our email: mail@mail.com</li>
+            <li class="contact-info">Our phone number: 09654335678</li>
+            <li class="contact-info">Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+    </div>
+    <footer>
+        <h3>Copyright</h3>
+        <div class="copyright">
+            This is a dummy website for educational purposes only. Based on a wireframe by Microverse Inc.
+            Created by Emily Robertson, Elmer Lopez, and Teshome Kurabachew.
+        </div>
+    </footer>
   </body>
 </html>
