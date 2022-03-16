@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks());
 document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // Get form values
+  // Get form values inputs 
   const titleI = document.querySelector('#new-title').value;
   const authorI = document.querySelector('#new-author').value;
 
