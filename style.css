@@ -111,6 +111,11 @@ header {
   color: gray;
 }
 
+.date {
+  text-align: right;
+  margin: 5px;
+}
+
 h2 {
  font-size: 40px;
 }
@@ -155,7 +160,7 @@ h3 {
 }
 
 .copyright {
-  width: 30%;
+  width: 50%;
   padding: 15px;
   text-align: right;
 }
