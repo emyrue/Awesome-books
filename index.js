@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', UI.displayBooks());
 document.querySelector('#form').addEventListener('submit', (e) => {
   e.preventDefault();
 
-  // Get form values inputs 
+  // Get form values inputs
   const titleI = document.querySelector('#new-title').value;
   const authorI = document.querySelector('#new-author').value;
 
@@ -57,7 +57,7 @@ const menuContact = document.querySelector('.menu-item3');
 const listSection = document.querySelector('.primaryContent');
 const formSection = document.querySelector('.forForm');
 const contactSection = document.querySelector('.contact');
-let theDate = new Date();
+const theDate = new Date();
 document.querySelector('.date').innerHTML = theDate;
 
 menuList.addEventListener('click', () => {
@@ -65,8 +65,7 @@ menuList.addEventListener('click', () => {
     listSection.classList.remove('none');
     if (formSection.classList.contains('none')) {
       contactSection.classList.add('none');
-    }
-    else {
+    } else {
       formSection.classList.add('none');
     }
   }
@@ -77,8 +76,7 @@ menuAdd.addEventListener('click', () => {
     formSection.classList.remove('none');
     if (listSection.classList.contains('none')) {
       contactSection.classList.add('none');
-    }
-    else {
+    } else {
       listSection.classList.add('none');
     }
   }
@@ -89,8 +87,7 @@ menuContact.addEventListener('click', () => {
     contactSection.classList.remove('none');
     if (listSection.classList.contains('none')) {
       formSection.classList.add('none');
-    }
-    else {
+    } else {
       listSection.classList.add('none');
     }
   }
